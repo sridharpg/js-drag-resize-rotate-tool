@@ -185,7 +185,7 @@ export default function _drag(method) {
         };
 
         let drop = noop; 
-        if (isUndef(data.drop)) {
+        if (isDef(data.drop)) {
             drop = function(e) {  
                 data.drop(e, sel);
             };
