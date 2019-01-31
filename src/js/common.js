@@ -25,11 +25,11 @@ export function offset(node) {
 }
 
 export function isDef(val) {
-    return typeof val !== 'undefined' && typeof val !== null;
+    return val !== undefined && val !== null;
 }
 
 export function isUndef(val) {
-    return typeof val === 'undefined' || typeof val === null;
+    return val === undefined || val === null;
 }
 
 export function noop() {}
