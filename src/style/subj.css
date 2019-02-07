@@ -6,14 +6,19 @@
     position: static;
     width: 0;
     height : 0;
+    tab-index: 0;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
 }
 
-.dg-controls {
+.dg-wrapper:focus .dg-controls {
     display: inline-block;
+}
+
+.dg-controls {
+    display: none;
     box-sizing: border-box;
     top:0;
     left:0;   

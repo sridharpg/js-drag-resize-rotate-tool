@@ -34,7 +34,7 @@ export default function _drag(method) {
             return forEach.call(this, function(value) {
                 if (isUndef(value[storage])) {
                     _init(value, options);
-                };
+                }
                 _draw(value);
             });
         },
@@ -63,6 +63,8 @@ export default function _drag(method) {
         wrapper.appendChild(sel);
 
         const container = sel.parentNode;
+        container.tabIndex = 0;
+
         const _sel = Helper(sel);
 
         const w = _sel.css('width'),
@@ -84,7 +86,7 @@ export default function _drag(method) {
         controls.innerHTML = brackets;
 
         addClass(controls, 'dg-controls');
-
+        
         container.appendChild(controls);
 
         const _controls = Helper(controls);
@@ -101,7 +103,7 @@ export default function _drag(method) {
             move: false,
             resize: false,
             rotate: false,
-        }
+        };
 
         if (isDef(options)) {
             if (isDef(options.snap)) {
@@ -138,7 +140,9 @@ export default function _drag(method) {
         addClass(sel, 'dg-drag');
 
         const down = function(e) {
-            _mouseDown(e, sel);
+            if(e.button === 0) {
+                _mouseDown(e, sel);
+            }
         };
 
         const touch = function(e) {

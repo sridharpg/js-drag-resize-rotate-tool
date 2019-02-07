@@ -14,7 +14,7 @@ export const cancelAnimFrame = cancelAnimationFrame ||
         mozCancelAnimationFrame ||
         function(requestID) {
             clearTimeout(requestID);
-        };
+        }
 
 export const forEach = Array.prototype.forEach,
         arrSlice = Array.prototype.slice,
